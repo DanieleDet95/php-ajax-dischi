@@ -31,16 +31,6 @@
       <!-- Container -->
       <div class="container">
 
-        <!-- Blocco dischi -->
-        <?php foreach ($database as $dischi => $disco) { ?>
-        <div class="blocco">
-          <img class="immagine" src="<?php echo $disco['poster']; ?>" alt="immagine disco">
-          <h2 class="titolo"><?php echo $disco['title']; ?></h2>
-          <p class="autore"><?php echo $disco['author']; ?></p>
-          <p class="anno"><?php echo $disco['year']; ?></p>
-        </div>
-        <?php } ?>
-        
       </div>
     </main>
 

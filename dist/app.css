@@ -17,12 +17,21 @@ header .container {
 }
 
 header .container img {
+  float: left;
   width: 50px;
+}
+
+header .container .artista {
+  float: right;
+  margin: 15px;
+  width: 150px;
+  height: 20px;
 }
 
 main {
   height: 100%;
   width: 100%;
+  min-height: calc(100vh - 50px);
   background: #1e2d3b;
 }
 
@@ -38,6 +47,7 @@ main .container {
 main .container .blocco {
   flex-basis: 200px;
   border: 1px solid black;
+  background: black;
   text-align: center;
   padding: 15px 15px 70px 15px;
   margin: 20px;

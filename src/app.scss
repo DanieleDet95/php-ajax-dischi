@@ -17,7 +17,14 @@ header{
     margin: 0 auto;
 
     img{
+      float: left;
       width: 50px;
+    }
+    .artista{
+      float: right;
+      margin: 15px;
+      width: 150px;
+      height: 20px;
     }
   }
 }
@@ -27,6 +34,7 @@ header{
 main {
   height: 100%;
   width: 100%;
+  min-height: calc(100vh - 50px);
   background: #1e2d3b;
 
   .container{
@@ -40,6 +48,7 @@ main {
     .blocco{
       flex-basis: 200px;
       border: 1px solid black;
+      background: black;
       text-align: center;
       padding: 15px 15px 70px 15px;
       margin: 20px;

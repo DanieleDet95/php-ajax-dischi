@@ -23,6 +23,15 @@
       <div class="container">
         <!-- Logo -->
         <img src="img/logo.jpg" alt="logo">
+        <select class="artista" name="artista">
+          <option value="Tutti">Tutti</option>
+          <option value="Bon Jovi">Bon Jovi</option>
+          <option value="Queen">Queen</option>
+          <option value="Sting">Sting</option>
+          <option value="Steve Gadd Band">Steve Gadd Band</option>
+          <option value="Iron Maiden">Iron Maiden</option>
+          <option value="Eric Clapton">Eric Clapton</option>
+        </select>
       </div>
     </header>
 
@@ -30,12 +39,11 @@
     <main>
       <!-- Container -->
       <div class="container">
-
+        <!-- Appendere handlebars -->
       </div>
     </main>
 
-
-
+    <!-- //////////////////////// TEMPLATES //////////////////////////////// -->
 
     <!-- Template handlebars -->
     <script id="disco-template" type="text/x-handlebars-template">

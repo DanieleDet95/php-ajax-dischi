@@ -1,0 +1,60 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+header {
+  height: 50px;
+  width: 100%;
+  background: #000000;
+}
+
+header .container {
+  display: block;
+  max-width: 972px;
+  margin: 0 auto;
+}
+
+header .container img {
+  width: 50px;
+}
+
+main {
+  height: 100%;
+  width: 100%;
+  background: #1e2d3b;
+}
+
+main .container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  max-width: 972px;
+  margin: auto;
+  padding: 100px 0;
+}
+
+main .container .blocco {
+  flex-basis: 200px;
+  border: 1px solid black;
+  text-align: center;
+  padding: 15px 15px 70px 15px;
+  margin: 20px;
+}
+
+main .container .blocco .immagine {
+  width: 100%;
+}
+
+main .container .blocco .titolo {
+  color: white;
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+
+main .container .blocco .autore,
+main .container .blocco .anno {
+  color: gray;
+}
+

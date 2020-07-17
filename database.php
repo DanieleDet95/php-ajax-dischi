@@ -36,6 +36,12 @@
             'author' => 'Eric Clapton',
             'year' => 2002,
             'poster' => 'https://images-na.ssl-images-amazon.com/images/I/81MDAIdh78L._SY355_.jpg'
+        ],
+        [
+            'title' => 'We Are the Champions',
+            'author' => 'Queen',
+            'year' => 1977,
+            'poster' => 'https://images-na.ssl-images-amazon.com/images/I/51B3ubnHrOL._AC_.jpg'
         ]
     ];
 

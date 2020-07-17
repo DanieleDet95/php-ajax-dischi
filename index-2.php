@@ -56,7 +56,7 @@
     </script>
 
     <!-- Connessione JS -->
-    <script type="text/javascript" src="js/script.js"></script>
+    <script type="text/javascript" src="dist/app.js"></script>
 
   </body>
 </html>

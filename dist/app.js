@@ -16092,75 +16092,46 @@ var $ = __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js"
 var Handlebars = __webpack_require__(/*! handlebars */ "./node_modules/handlebars/dist/cjs/handlebars.js");
 
 $(document).ready(function () {
-  // Chiamata ajax
-  $.ajax({
-    url: 'http://localhost:8888/php-ajax-dischi/server.php',
-    method: 'GET',
-    success: function success(data) {
-      stampa_dischi(data);
-    },
-    error: function error() {
-      alert('Documento API non caricato correttamente');
-    }
-  }); // Al cambio delle section autori
+  // Al caricamento della pagina stampa tutti i dischi
+  stampa_dischi(''); // Al cambio della select stampare i cd con l'artista selezionato
 
   $('select.artista').change(function () {
-    // Stampa disco in base all'autore
-    filtro_autore();
-  });
-}); // Stampa dischi
+    // Resettare i dischi nell'HTML
+    $('main div.container').text(''); // Prendere il valore selezionato
 
-function stampa_dischi(dischi) {
-  // Implementazione handlebars
-  var source = $("#disco-template").html();
-  var template = Handlebars.compile(source); // Ciclare per ogni array presente nel server
+    var artista = $('select.artista').val();
+    stampa_dischi(artista);
+  }); // Stampa dischi
 
-  for (var i = 0; i < dischi.length; i++) {
-    var html = template(dischi[i]); // Stampare i dischi nell'HTML
-
-    $('main div.container').append(html);
-  }
-} // Al click dell'artista da filtrare
-
-
-function filtro_autore() {
-  // Resettare il container
-  $('main .container').text(''); // Implementazione handlebars
-
-  var source = $("#disco-template").html();
-  var template = Handlebars.compile(source); // Prendere il valore selezionato
-
-  var artista = $('select.artista').val(); // Chiamata ajax
-
-  $.ajax({
-    url: 'http://localhost:8888/php-ajax-dischi/server.php',
-    method: 'GET',
-    data: {
-      author: artista
-    },
-    success: function success(data) {
-      console.log(data); // Se é stato selezionato 'Tutti'
-
-      if (artista == 'Tutti') {
-        // Stampa tutti i dischi
-        stampa_dischi(data);
-      } // Ciclare per ogni array presente nel server
-
-
-      for (var i = 0; i < data.length; i++) {
-        // Confrontare con tutti gli autori
-        if (data[i].author == artista) {
-          // Stampa l'autore selezionato
-          var html = template(data[i]);
-          $('main div.container').append(html);
-        }
+  function stampa_dischi(artista) {
+    // Chiamata ajax
+    $.ajax({
+      url: 'http://localhost:8888/php-ajax-dischi/server.php',
+      method: 'GET',
+      data: {
+        author: artista
+      },
+      success: function success(data) {
+        get_cds(data);
+      },
+      error: function error() {
+        alert('Documento API non caricato correttamente');
       }
-    },
-    error: function error() {
-      alert('Documento API non caricato correttamente');
+    });
+  }
+
+  function get_cds(dischi) {
+    // Implementazione handlebars
+    var source = $("#disco-template").html();
+    var template = Handlebars.compile(source); // Ciclare per ogni array presente nel server
+
+    for (var i = 0; i < dischi.length; i++) {
+      var html = template(dischi[i]); // Stampare i dischi nell'HTML
+
+      $('main div.container').append(html);
     }
-  });
-}
+  }
+});
 
 /***/ }),
 

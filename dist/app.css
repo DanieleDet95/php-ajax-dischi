@@ -7,7 +7,7 @@
 header {
   height: 50px;
   width: 100%;
-  background: #000000;
+  background: black;
 }
 
 header .container {
@@ -21,11 +21,19 @@ header .container img {
   width: 50px;
 }
 
-header .container .artista {
+header .container form {
   float: right;
+}
+
+header .container form .artista {
+  float: left;
   margin: 15px;
   width: 150px;
   height: 20px;
+}
+
+header .container form input {
+  margin-top: 15px;
 }
 
 main {

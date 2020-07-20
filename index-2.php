@@ -10,8 +10,6 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.6/handlebars.js"></script>
     <link rel="stylesheet" href="dist/app.css">
     <title>Booltify</title>
   </head>
@@ -23,15 +21,14 @@
       <div class="container">
         <!-- Logo -->
         <img src="img/logo.jpg" alt="logo">
-        <select class="artista" name="artista">
-          <option value="Tutti">Tutti</option>
-          <option value="Bon Jovi">Bon Jovi</option>
-          <option value="Queen">Queen</option>
-          <option value="Sting">Sting</option>
-          <option value="Steve Gadd Band">Steve Gadd Band</option>
-          <option value="Iron Maiden">Iron Maiden</option>
-          <option value="Eric Clapton">Eric Clapton</option>
-        </select>
+        <form action="index-2.php" method="get">
+          <select class="artista" name="artista">
+            <option value="">Tutti</option>
+            <?php foreach ($database as $dischi => $disco) { ?>
+            <option value="<?php echo $disco['author']; ?>"><?php echo $disco['author']; ?></option>
+            <?php } ?>
+          </select>
+        </form>
       </div>
     </header>
 
